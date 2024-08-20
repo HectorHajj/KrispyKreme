@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main class="container">
+    <div class="row my-5">
+        <div class="col-sm-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold krispyGreenText">STORE</h5>
+                    <h6 class="card-subtitle mb-2 text-muted krispyGreenText">Put an order for donuts!</h6>
+                    @Html.ActionLink("GO", "Store", "Home", new { area = "" }, new { @class = "card-link fw-bold krispyRedText" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold krispyGreenText">DASHBOARD</h5>
+                    <h6 class="card-subtitle mb-2 text-muted krispyGreenText">Look at graphs and statistics</h6>
+                    @Html.ActionLink("GO", "Dashboard", "Home", new { area = "" }, new { @class = "card-link fw-bold krispyRedText" })
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

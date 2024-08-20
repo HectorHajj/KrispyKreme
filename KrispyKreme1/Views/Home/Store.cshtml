@@ -1,0 +1,52 @@
+﻿@model KrispyKreme1.Models.ViewModels.SaleViewModel
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<main class="container">
+    <div class="row my-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <div class="w-100">
+                        <h5 class="card-title fw-bold krispyGreenText text-center">STORE</h5>
+
+                        <form action="@Url.Action("SubmitSale", "Home")" method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="row mb-3">
+                                <div class="col">
+                                    @Html.LabelFor(m => m.CustomerName, new { @class = "form-label" })
+                                    @Html.TextBoxFor(m => m.CustomerName, new { @class = "form-control mw-100" })
+                                    @Html.ValidationMessageFor(m => m.CustomerName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col">
+                                    @Html.LabelFor(m => m.CustomerAddress, new { @class = "form-label" })
+                                    @Html.TextBoxFor(m => m.CustomerAddress, new { @class = "form-control mw-100" })
+                                    @Html.ValidationMessageFor(m => m.CustomerAddress, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    @Html.LabelFor(m => m.DonutId, "Select Donut", new { @class = "form-label" })
+                                    @Html.DropDownListFor(m => m.DonutId, new SelectList(ViewBag.Donuts, "Id", "Name"), "Select a Donut", new { @class = "form-control mw-100" })
+                                    @Html.ValidationMessageFor(m => m.DonutId, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col">
+                                    @Html.LabelFor(m => m.Quantity, new { @class = "form-label" })
+                                    @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control mw-100" })
+                                    @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-center align-items-center">
+                                    <button type="submit" class="btn krispyRedText fw-bold">SUBMIT</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
